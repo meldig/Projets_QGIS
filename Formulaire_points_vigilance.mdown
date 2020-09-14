@@ -13,6 +13,7 @@ L'objectif est de créer un formulaire utilisant une relation n:n (comprenant do
 ### Prérequis
 
 Tout d'abord, il faut **impérativement** mettre en place la création de groupe de transaction. Pour cela, cliquez sur Projet/propriétés/Sources de données et cochez la case *Créer automatiquement des groupes de transaction lorsque c'est possible.* Cela permettra de remplir nos deux formulaires. 
+<!-- -->
 ![Illustration de la structure de tables du projet](Illustrations_points_vigilance/illustration_prerequis.PNG)
 
 ### 1. Structure des tables en base
