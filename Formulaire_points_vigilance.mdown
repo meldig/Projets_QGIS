@@ -13,35 +13,35 @@ L'objectif est de créer un formulaire utilisant une relation n:n (comprenant do
 
  Les tables sur lesquelles le formulaire porte se présente ainsi : 
 <!-- -->
-![Illustration de la structure de tables du projet](C:/Users/bjacq/Documents/code/Projets_QGIS/Illustrations_points_vigilance/illustration_1_structure_des_tables.PNG)
+![Illustration de la structure de tables du projet](Illustrations_points_vigilance/illustration_1_structure_des_tables.PNG)
 
 ### 2. Création des relations dans le projet qgis
 
 Pour que la relation n:n entre les tables *TA_GG_POINT_VIGILANCE*, *TA_RELATION_PERMIS_CONSTRUIRE* et *TA_PERMIS_CONSTRUIRE* puisse se faire correctement, il faut reproduire ces associations dans le projet QGIS de la façon suivante (nous présupposons ici que les tables sont déjà chargées dans le projet) :
 
 2.1. Allez dans Projet/Propriétés/Relations et cliquez sur *Ajouter une relation* ;  
-![Illustration de l'étape 2.1. de la création des relations](C:/Users/bjacq/Documents/code/Projets_QGIS/Illustrations_points_vigilance/illustration_partie_2_etape_1.PNG)
+![Illustration de l'étape 2.1. de la création des relations](Illustrations_points_vigilance/illustration_partie_2_etape_1.PNG)  
 2.2. Renseigner la couche parente, *TA_GG_POINT_VIGILANCE*, avec sa couche fille correspondante, *TA_RELATION_PERMIS_CONSTRUIRE*, c'est-à-dire la couche (parente) dont la PK est référencée dans la couche fille (disposant donc de la FK de la couche parente) et nommez explicitement votre relation car elle sera utilisée dans le formulaire ;  
-![Illustration de l'étape 2.2. de la création des relations](C:/Users/bjacq/Documents/code/Projets_QGIS/Illustrations_points_vigilance/illustration_partie_2_etape_2.PNG)
+![Illustration de l'étape 2.2. de la création des relations](Illustrations_points_vigilance/illustration_partie_2_etape_2.PNG)  
 2.3. Réitérer l'étape 2 pour les tables *TA_PERMIS_CONSTRUIRE* et *TA_RELATION_PERMIS_CONSTRUIRE* ;  
-![Illustration de l'étape 2.3. de la création des relations](C:/Users/bjacq/Documents/code/Projets_QGIS/Illustrations_points_vigilance/illustration_partie_2_etape_3.PNG)
+![Illustration de l'étape 2.3. de la création des relations](Illustrations_points_vigilance/illustration_partie_2_etape_3.PNG)
 <!-- -->
 L'idée est ici de créer deux relations 1:n afin d'aboutir à une relation n:n. Cette méthode est issue de la [documentation QGIS](https://docs.qgis.org/3.10/fr/docs/user_manual/working_with_vector/attribute_table.html#introducing-many-to-many-n-m-relations).
 
 ### 3. Création du formulaire
 
 3.1. Accédez aux propriétés de la couche *TA_RELATION_PERMIS_CONSTRUIRE* et créer le formulaire par glisser déposer en spécifiant pour chaque clé étrangère la référence de la relation créée au point 2 ou 3 et la PK de la table référencée. Cachez le formulaire lors de l'insertion d'une entité. Vérifiez que la relation est bien insérée dans le formulaire et que la cardinalité ne soit **PAS** *relations un à plusieurs*;  
-![Illustration de l'étape 3.1. de la création des relations](C:/Users/bjacq/Documents/code/Projets_QGIS/Illustrations_points_vigilance/illustration_partie_3_etape_1.PNG)
+![Illustration de l'étape 3.1. de la création des relations](Illustrations_points_vigilance/illustration_partie_3_etape_1.PNG)  
 3.2. Créer le formulaire des points de vigilance en utilisant le style présent dans le dossier *O:\UF_Acquisition\test_point_vigilance\styles* ;  
-![Illustration de l'étape 3.2. de la création des relations](C:/Users/bjacq/Documents/code/Projets_QGIS/Illustrations_points_vigilance/illustration_partie_3_etape_2.PNG)
+![Illustration de l'étape 3.2. de la création des relations](Illustrations_points_vigilance/illustration_partie_3_etape_2.PNG)  
 3.4. Faire les jointures entre les tables attributaires (*ta_famille*, *ta_famille_libelle*, *ta_libelle_long*, *ta_libelle*) ;
 
 ### 4. Comportement du formulaire lors de son utilisation
 
 L'utilisation du formulaire se fait de la façon suivante :  
 4.1. Créer un point de vigilance dans la table *TA_GG_VIGILANCE* et renseignez les champs de cette table uniquement ;  
-![Illustration de l'étape 4.1. de la création des relations](C:/Users/bjacq/Documents/code/Projets_QGIS/Illustrations_points_vigilance/illustration_partie_4_etape_1.PNG)
+![Illustration de l'étape 4.1. de la création des relations](Illustrations_points_vigilance/illustration_partie_4_etape_1.PNG)  
 4.2. Cliquez sur *identifier les entités*, puis sur le point de vigilance que vous venez de créer, puis dans le formulaire qui vient de s'ouvrir partie *Permis de construire*, sur *Ajouter un enregistrement*;  
-![Illustration de l'étape 4.2. de la création des relations](C:/Users/bjacq/Documents/code/Projets_QGIS/Illustrations_points_vigilance/illustration_partie_4_etape_2.PNG)
+![Illustration de l'étape 4.2. de la création des relations](Illustrations_points_vigilance/illustration_partie_4_etape_2.PNG)  
 4.3. Là remplissez le formulaire qui vient de s'ouvrir et cliquez sur *OK* du formulaire des permis de construire et des points de vigilance puis enregistrez vos modifications. Votre point dipose désormais de son permis de construire (l'association est bien enregistrée en base dans la table pivot);  
-![Illustration de l'étape 4.2. de la création des relations](C:/Users/bjacq/Documents/code/Projets_QGIS/Illustrations_points_vigilance/illustration_partie_4_etape_2.PNG)
+![Illustration de l'étape 4.2. de la création des relations](Illustrations_points_vigilance/illustration_partie_4_etape_2.PNG)
