@@ -4,12 +4,18 @@
 L'objectif est de créer un formulaire utilisant une relation n:n (comprenant donc trois tables) en permettant à l'utilisateur de remplir les données des deux tables concernées par le formulaire, sans qu'il n'ait à toucher celui de la table pivot. Ce formulaire a notamment été créé pour le projet des points de vigilances dans lequel l'utilisateur doit pouvoir créer un point et remplir ses informations, puis remplir les informations du permis de construire qui lui est associé. Nous allons donc présenter ci-dessous la méthode utilisée pour le formulaire des points de vigilance, celui des permis de construire et les relations entre les tables permettant l'assoication d'un point de vigilance avec son permis de construire.
 
 ## Table des matières :
+### Prérequis
 ### 1. Structure des tables en base ;
 ### 2. Création des relations dans le projet qgis ;
 ### 3. Création du formulaire ;
 ### 4. Comportement du formulaire lors de son utilisation ;
 
- ### 1. Structure des tables en base
+### Prérequis
+
+Tout d'abord, il faut **impérativement** mettre en place la création de groupe de transaction. Pour cela, cliquez sur Projet/propriétés/Sources de données et cochez la case *Créer automatiquement des groupes de transaction lorsque c'est possible.* Cela permettra de remplir nos deux formulaires. 
+![Illustration de la structure de tables du projet](Illustrations_points_vigilance/illustration_prerequis.PNG)
+
+### 1. Structure des tables en base
 
  Les tables sur lesquelles le formulaire porte se présente ainsi : 
 <!-- -->
